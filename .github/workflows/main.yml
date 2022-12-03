@@ -1,0 +1,23 @@
+name: CI-CD-pipeline-AWS
+env:
+  EB_PACKAGE_S3_BUCKET_NAME: ff
+  EB_APPLICATION_NAME: fiber
+  EB_ENVIRONMENT_NAME: myapp-env
+  DEPLOY_PACKAGE_NAME: flast
+  AWS_REGION_NAME: "es-uest"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  my_ci_part:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone my repo
+        uses: actions/checkout@v3
+
+      - name: Do something
+        run: echo "hello world"
